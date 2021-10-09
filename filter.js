@@ -1,3 +1,4 @@
+//? arrayObject.filter(callback, contextObject);
 //* Array of Objects of cities and their populations
 let cities = [
     { name: 'Los Angeles', population: 3792621 },
@@ -27,9 +28,21 @@ let largePopulation = (cities) => {
  */
 
 //! filter method <><><>>><><><>><>
-let largePopulationFilter = (cities) => cities.filter(city => city.population > 3_000_000);
+let largePopulationFilter = cities => cities.filter(city => city.population > 3_000_000);
     //let bigCitiesFiltered = 
     //return 
     //return bigCitiesFiltered;
 //}
-console.log(largePopulationFilter(cities));
+//? console.log(largePopulationFilter(cities));
+
+//! Since filter() returns a 'new' array it can be chained with other methods
+let chainedFilter = cities => {
+    let fC =  cities  
+        .filter(city => city.population < 3_000_000)
+        .sort((c1, c2) => c1.population - c2.population)
+        .map(city => console.log(`${city.name} : ${city.population}`)
+        );
+
+        return fC;
+};
+console.log(chainedFilter(cities));
