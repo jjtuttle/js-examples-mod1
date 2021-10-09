@@ -27,9 +27,9 @@ let largePopulation = (cities) => {
  */
 
 //! filter method <><><>>><><><>><>
-let largePopulationFilter = (cities) => {
-    let bigCitiesFiltered = cities.filter(function (ele) {
-        return ele.population > 3_000_000;
-    });
-}
-console.log(largePopulationFilter);
+let largePopulationFilter = (cities) => cities.filter(city => city.population > 3_000_000);
+    //let bigCitiesFiltered = 
+    //return 
+    //return bigCitiesFiltered;
+//}
+console.log(largePopulationFilter(cities));
