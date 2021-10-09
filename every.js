@@ -13,4 +13,21 @@ let forLoop = num => {
     }
     return result;
 }
-console.log(forLoop(numbers));
+//? console.log(forLoop(numbers));
+
+//! every() method way
+
+let everyMethod = num => {
+    let result = num.every(function (ele) {
+        return ele > 0
+    });
+    return result;
+};
+// console.log(everyMethod(numbers));
+
+//! ES6 Fat Arrow
+let fatEvery = numbers.every( ele => ele > 0);
+
+//console.log(fatEvery);
+
+//! even numbers with  every()
