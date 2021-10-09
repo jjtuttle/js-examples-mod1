@@ -11,10 +11,18 @@ let cities = [
 let largePopulation = (cities) => {
     let bigCities = [];
 
-    for(let i = 0; i < cities.length; i++) {
-        if(cities[i].population > 3_000_000) {
+    for (let i = 0; i < cities.length; i++) {
+        if (cities[i].population > 3_000_000) {
             bigCities.push(cities[i]);
         }
     }
+    return bigCities;
 };
 console.log(largePopulation(cities));
+/** =>
+ * [
+  { name: 'Los Angeles', population: 3792621 },
+  { name: 'New York', population: 8175133 }
+]
+ */
+
