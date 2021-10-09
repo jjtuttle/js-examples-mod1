@@ -13,4 +13,4 @@ let forLoop = num => {
     }
     return result;
 }
-console.log(result(numbers));
+console.log(forLoop(numbers));
