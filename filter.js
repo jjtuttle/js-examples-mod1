@@ -18,7 +18,7 @@ let largePopulation = (cities) => {
     }
     return bigCities;
 };
-console.log(largePopulation(cities));
+//? console.log(largePopulation(cities));
 /** =>
  * [
   { name: 'Los Angeles', population: 3792621 },
@@ -26,3 +26,10 @@ console.log(largePopulation(cities));
 ]
  */
 
+//! filter method <><><>>><><><>><>
+let largePopulationFilter = (cities) => {
+    let bigCitiesFiltered = cities.filter(function (ele) {
+        return ele.population > 3_000_000;
+    });
+}
+console.log(largePopulationFilter);
