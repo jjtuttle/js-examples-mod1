@@ -31,3 +31,6 @@ let fatEvery = numbers.every( ele => ele > 0);
 //console.log(fatEvery);
 
 //! even numbers with  every()
+let isOdd = numbers.every( ele => ele % 2 !== 0);
+
+console.log(isOdd);
