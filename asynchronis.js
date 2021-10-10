@@ -12,4 +12,12 @@ let setSecondsTimeoutArgs = (cb, delay, ...args) => {
 }
 
 //! ===============================================
-//!
+//! batch callbacks with timer 
+const batchTimeouts = (cb, delays) => {
+
+    return cb.map((callback, i) => {
+        return setTimeout(callback, delays[i]);
+    })
+}
+
+//! ===============================================
