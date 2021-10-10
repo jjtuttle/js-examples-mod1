@@ -21,3 +21,15 @@ const batchTimeouts = (cb, delays) => {
 }
 
 //! ===============================================
+//! interval count timeout
+const intervalCount = (cb, delay, amount) => {
+    const interval = setInterval(function () {
+        cb();
+        amount--;
+        if (amount === 0) {
+            clearInterval(interval);
+        }
+    }, delay);
+};
+
+//! ===============================================
