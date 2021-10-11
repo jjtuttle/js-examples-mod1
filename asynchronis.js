@@ -33,3 +33,36 @@ const intervalCount = (cb, delay, amount) => {
 };
 
 //! ===============================================
+//! delay and pause timeout
+
+function printAndPause(nums) {
+    if (!nums.length) return;
+
+    let delay = nums.shift();
+
+    console.log(delay);
+
+    setTimeout(printAndPause, delay, nums);
+}
+
+//! ===============================================
+//! with conditionals 
+const directions = ['North', 'East', 'East', 'West', 'North', 'South', 'South', 'West']
+
+const navigator = dirArr => {
+
+    if (!dirArr.length) return;
+
+
+    let first = dirArr.shift();
+    let delay;
+    if (first === 'North') delay = 250;
+    if (first === 'South') delay = 125;
+    if (first === 'East') delay = 300;
+    if (first === 'West') delay = 175;
+    console.log(`Moving ${first}, and waiting ${delay}ms`);
+    setTimeout(navigator, delay, dirArr);
+}
+navigator(directions);
+
+//! ===============================================
