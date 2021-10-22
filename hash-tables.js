@@ -34,6 +34,7 @@ function hashMod(key) {
 // console.log(hash('james'));          // 528
 // console.log(hashMod('james'));       // 0
 //! ===============================================
+//! cache Fibonacci sequence
 cache = {};
 
 function fibMemoPrint(n) {
@@ -48,3 +49,60 @@ function fibMemoPrint(n) {
 
     return cache[n];
 }
+//console.log(fibMemoPrint(26));
+//! ===============================================
+//!  Hash Table takes 3 things to make it work
+//! 1.  create a hash table class
+//! 2.  add a hash function
+//! 3.  implement a method for adding key/value pairs to our table
+//! ===============================================
+
+class HashTable {
+    constructor() {
+        this.table = new Array(127);
+        this.size = 0;
+    }
+
+    hash(key) {
+        let hash = 0;
+        for (let i = 0; i < key.length; i++) {
+            hash += key.charCodeAt(i);
+        }
+        return hash % this.table.length;
+    }
+
+    set(key, value) {
+        const index = this.hash(key);
+        this.table[index] = [key, value];
+        this.size++;
+    }
+
+    get(key) {
+        const index = this.hash(key);
+        return this.table[index];
+    }
+
+    remove(key) {
+        const index = this.hash(key);
+
+        if (this.table[index] && this.table[index].length) {
+            this.table[index] = undefined;
+            this.size--;
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+const ht = new HashTable();
+// console.log(ht.set("Canada", 300));
+// console.log(ht.set("France", 100));
+// console.log(ht.set("Spain", 110));
+
+console.log(hashTable)
+console.log(hashTable.data)
+console.log(hashTable.data[0])
+
+//! ===============================================
+//! 
