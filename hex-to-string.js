@@ -1,19 +1,11 @@
+// need to do it with arrays
 
-function hexadecimalToString(hexadecimalChars) {
-    let parseDec = '';
-    let char = '';
+function hexToString(hex) {
 
-    for (let i = 0; i < hexadecimalChars.length; i++) {
-        parseDec += parseInt(hexadecimalChars[i], 16) + ',';
-    }
+    let base10 = parseInt(hexBlob, 16)
+    return String.fromCharCode(base10)
 
-    for (let i = 0; i < parseDec.length; i++) {
-        char += String.fromCharCode(parseDec);
-    }
+   }
 
-    return char;
+console.log(hexToString(['0x0041', '0x0042', '0x0043']));  // 'ABC'
 
-}
-
-
-console.log(hexadecimalToString(['0x0041', '0x0042', '0x0043']));  // 'ABC'
