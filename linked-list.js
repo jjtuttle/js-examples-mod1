@@ -16,12 +16,40 @@ dequeueEndTime = Date.now();
 
 console.log(`Enqueue time: ${enqueueEndTime - enqueueStartTime}ms`);
 console.log(`Dequeue time: ${dequeueEndTime - dequeueStartTime}ms`);
+//! ===============================================
+// // singly linked list reverse 
+// function listNodeReverse(list) {
+//     prev = null;
+//     curr = head;
+//     next = null;
+
+//     while(curr !== null) {
+//         next = curr.next;  //save next
+//         curr.next = prev;  // reverse
+//         prev = curr;       // advance prev
+//         curr = next;       // advance curr
+//     }
+//     return prev;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //! ===============================================
 
 
-class NumSorter {
+class ChangeSorter {
     constructor(maxNums) {
         // = [];
         this.numList = new LinkedList();
@@ -75,6 +103,6 @@ class NumSorter {
     addNumToBack(num) {
 
         if (this.isNumAllowed(num)) this.numList.enqueue(num);
-        return this.numList.dequeue();  //..[this.numList.length - 1];
+        return this.numList.dequeue();  
     }
 }
