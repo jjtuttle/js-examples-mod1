@@ -8,7 +8,7 @@ function recursiveSort(arr) {
     let maxIdx = 0;
     for (let i = 0; i < arr.length; i++) {
 
-        if(arr[i] > arr[maxIdx]) maxIdx = i;
+        if (arr[i] > arr[maxIdx]) maxIdx = i;
     }
 
     const maxVal = arr[maxIdx];
@@ -143,5 +143,5 @@ function moveZeroesCompare(a, b) {
     if (b === 0) return -1;
     return a - b;
 }
-console.log(nums.sort(moveZeroesCompare));
+console.log(nums.sort(moveZeroesCompare)');
 //! ===============================================
