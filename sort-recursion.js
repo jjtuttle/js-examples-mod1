@@ -56,7 +56,69 @@ function moveZeroes(nums) {
     return nums;
 }
 let nums = [0, 1, 0, 4, 15];
-console.log(moveZeroes(nums));
+// console.log(moveZeroes(nums));
 
 //! ===============================================
-//! 
+//! Even/Odd sort
+
+function evenOddSort(nums) {
+    // Create two empty arrays: evens and odds
+    const evens = [];
+    const odds = [];
+    // Repeat 2 through 4 until the input array is empty
+    while (nums.length > 0) {
+        // Find the smallest even and odd values in the array
+        let smallestEven = Infinity;
+        let smallestOdd = Infinity;
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 === 0) {  // even
+                if (nums[i] < smallestEven) {
+                    smallestEven = nums[i];
+                }
+            } else if (nums[i] % 2 === 1) {  // odd
+                if (nums[i] < smallestOdd) {
+                    smallestOdd = nums[i];
+                }
+            }
+        }
+        // Add these to the end of the even and odd arrays
+        if (smallestEven !== Infinity) {
+            evens.push(smallestEven);
+            // Remove the smallest even value from the array
+            let smallestEvenIndex = nums.indexOf(smallestEven);
+            nums.splice(smallestEvenIndex, 1);
+        }
+        if (smallestOdd !== Infinity) {
+            odds.push(smallestOdd);
+            // Remove the smallest odd value from the array
+            let smallestOddIndex = nums.indexOf(smallestOdd);
+            nums.splice(smallestOddIndex, 1);
+        }
+    }
+
+    // Join the even and odd arrays and return
+    return [...evens, ...odds];
+}
+
+// console.log(evenOddSort([0, 1, 1, 1, 1, 1, 1, 2, 4, 5, 6]));
+//! ===============================================
+//! Javascript BUilt in Sort()
+//.. sorts numbers alpha, turns into Strings
+nums = [3, 2, 0, 4, 1];
+nums.sort();
+// console.log(nums);  // [0, 1, 2, 3, 4]
+
+
+//* With larger numbers use custom define a custom sorting predicate
+nums2 = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024];
+nums2.sort();
+// console.log(nums2); // [1024, 128, 16, 2, 256, 32, 4, 512, 64, 8] ?????
+//.. 
+
+function compareNumbers(a, b) {
+    return a - b;
+}
+nums3 = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024];
+console.log(nums3.sort(compareNumbers));
+
+//! ===============================================
