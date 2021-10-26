@@ -107,18 +107,41 @@ function evenOddSort(nums) {
 nums = [3, 2, 0, 4, 1];
 nums.sort();
 // console.log(nums);  // [0, 1, 2, 3, 4]
-
+//! -------------------------------------
 
 //* With larger numbers use custom define a custom sorting predicate
 nums2 = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024];
 nums2.sort();
 // console.log(nums2); // [1024, 128, 16, 2, 256, 32, 4, 512, 64, 8] ?????
-//.. 
-
+//! -------------------------------------
+//.. Custom Sorting Predicate
 function compareNumbers(a, b) {
     return a - b;
 }
 nums3 = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024];
-console.log(nums3.sort(compareNumbers));
+// console.log(nums3.sort(compareNumbers));
 
+//! ===============================================
+//!  Using JS sort even # on right odd # on left
+
+nums = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+function oddEvenCompare(a, b) {
+    if (a % 2 === 1 && b % 2 === 0) return 1;
+    if (a % 2 === 0 && b % 2 === 1) return -1;
+    return a - b;
+}
+// console.log(nums.sort(oddEvenCompare));
+
+//! ===============================================
+//! Sort 0's to the Right
+
+nums = [0, 1, 0, 4, 15];
+
+function moveZeroesCompare(a, b) {
+    if (a === 0) return 1;
+    if (b === 0) return -1;
+    return a - b;
+}
+console.log(nums.sort(moveZeroesCompare));
 //! ===============================================
