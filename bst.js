@@ -35,6 +35,14 @@ class BST {
 
         }
     }
+
+    inOrderPrint(root=this.root) {
+        if(!root) return;
+
+        this.inOrderPrint(root.left);
+        console.log(root.val);
+        this.inOrderPrint(root.right);
+    }
 }
 
 let tree1 = new BST();
@@ -45,4 +53,6 @@ tree1.insert(1);
 tree1.insert(7);
 tree1.insert(16);
 
-console.log(tree1.root);
+// console.log(tree1.root); //.. print the tree structure
+
+tree1.inOrderPrint();
